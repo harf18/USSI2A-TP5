@@ -1,4 +1,4 @@
-package net.lecnam.ussi2a.tp4;
+package net.lecnam.ussi2a.tp5;
 
 public class Dessin {
 

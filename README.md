@@ -1,4 +1,4 @@
-# TP4 : Héritage
+# TP5 : Héritage
 
 ### Objectif
 Utilisé l'héritage dans le cadre de la POO
@@ -9,17 +9,16 @@ Utilisé l'héritage dans le cadre de la POO
 
 ### Prérequis
 - Cloner le projet sur votre poste dans le repertoire de votre choix
-- Ouvrir le projet USSI2A-TP4
+- Ouvrir le projet USSI2A-TP5
     - File > New > Project from Exiting Sources (ou *Import Project* si vous êtes sur l'écran d'accueil)
     - Selectionner le dossier du projet
     - Selectionner **Create project from existing sources**
     - Conserver les informations (*Nom, Location, Format*)
     - IntelliJ détecte que c'est un projet Java
     - Aucune bibliothèque n'est integtée au projet
-    - IntelliJ créé un modules ISSI2A-TP4
-    - Choisir JDK13, s'il n'est pas dans la liste, cliquer sur le <span style="color:green">**+**</span> et selectionner le dossier du JDK 13
+    - Choisir JDK14, s'il n'est pas dans la liste, cliquer sur le <span style="color:green">**+**</span> et selectionner le dossier du JDK 14
     - Aucun Framework n'est detecté
-    - Aller dans File > Project Structure et Choisir 13 dans **Project language level**  
+    - Aller dans File > Project Structure et Choisir 14 dans **Project language level**  
 
 ### Utilisation de GIT
 
