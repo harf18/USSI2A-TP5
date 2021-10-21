@@ -7,18 +7,17 @@ Utilisé l'héritage dans le cadre de la POO
 - Classe Abstraite
 - Interface
 
+On repart de la fin du TP3 (hors bonus) avec les 3 classes Dessin, Rectangle et Point ainsi que la classe Exec pour vos tests
+
 ### Prérequis
 - Cloner le projet sur votre poste dans le repertoire de votre choix
-- Ouvrir le projet USSI2A-TP5
-    - File > New > Project from Exiting Sources (ou *Import Project* si vous êtes sur l'écran d'accueil)
-    - Selectionner le dossier du projet
-    - Selectionner **Create project from existing sources**
-    - Conserver les informations (*Nom, Location, Format*)
-    - IntelliJ détecte que c'est un projet Java
-    - Aucune bibliothèque n'est integtée au projet
-    - Choisir JDK14, s'il n'est pas dans la liste, cliquer sur le <span style="color:green">**+**</span> et selectionner le dossier du JDK 14
-    - Aucun Framework n'est detecté
-    - Aller dans File > Project Structure et Choisir 14 dans **Project language level**  
+- Ouvrir le projet TP5 :
+    - Sur l'écran d'accueil d'IntelliJ, cliquer sur **New Project**
+    - Selectionner **Java** dans la liste de gauche et **17** dans **Project SDK** puis Next
+    - Ne rien cocher puis **Next**
+    - Cliquer sur les **...** de **Project location** puis selectionner le dossier du projet tp5-xxxxx et cliquer sur **OK**
+    - Cliquer sur **Finish**
+    - Le projet s'ouvre
 
 ### Utilisation de GIT
 
@@ -28,13 +27,9 @@ Utilisé l'héritage dans le cadre de la POO
 
 ----
 
-### Exercice 0
-
-On repart de la fin du TP3 (hors bonus) avec les 3 classes Dessin, Rectangle et Point ainsi que la classe Exec pour vos tests
-
 ### Exercice 1
 
-On considère maintenant que les rectangles ne sont plus nécessairement parallèles aux axes. Un rectangle incliné est un rectangle avec un angle (en degrés)
+On considère maintenant que les rectangles ne sont plus nécessairement parallèles aux axes. Un rectangle incliné est un rectangle avec un angle (en degrés), mais il conserve les même autres propriétés et méthodes qu'un réctangle (il a une longueur, une largeur, un point d'origine, il peut translater, etc...)
 
 Créer une classe **RectangleIncline** qui hérite de **Rectangle** avec une propriété *angle* et les constructeurs appropriés 
 
@@ -52,8 +47,8 @@ Redefinir les méthodes de la classe **RectangleIncline** qui le nécessitent (O
 Pour savoir si un point est dans un rectangle incliné, vous pouvez utiliser le code suivant :
 
 ```java
-double rotx =  p.x * Math.cos(this.angle) - p.y * Math.sin(this.angle);
-double roty = -p.x * Math.sin(this.angle) + p.y * Math.cos(this.angle);
+double rotx =  point.x * Math.cos(this.angle) - point.y * Math.sin(this.angle);
+double roty = -point.x * Math.sin(this.angle) + point.y * Math.cos(this.angle);
 return (this.point.x <= rotx && rotx <= this.point.x + this.longeur &&
         this.point.y <= roty && roty <= this.point.y + this.largeur);
 ```
@@ -61,7 +56,7 @@ return (this.point.x <= rotx && rotx <= this.point.x + this.longeur &&
 > Pensez a faire un commit !!  
 
 ### Exercice 4
-Si besoin, modifier la classe Dessin pour qu'on puisse ajouter des rectangles inclinés. 
+Modifier si nécessaire la classe Dessin pour qu'on puisse ajouter des rectangles inclinés. 
 
 > Pensez a faire un commit !!  
 
@@ -87,8 +82,9 @@ Créer une classe **Disque** avec les constructeurs adaptés ainsi que les méth
 
 
 ### Exercice 7
-Modifier la classe **Dessin** pour qu'on puisse ajouter des **Disques** en plus des **Rectangles**. Attention, il ne faut pas rajouter un nouveau tableau et une nouvelle méthode, il faut modifier les éléments actuels pour qu'il soit possible d'ajouter aussi bien un **Disque** qu'un **Rectangle**.
-Penser à modifier la méthode qui retourne le plus grand rectangle pour qu'elle retourne la plus grande figure
+Modifier la classe **Dessin** pour qu'on puisse ajouter des **Disques** en plus des **Rectangles**. Attention, il ne faut pas rajouter un nouveau tableau et une nouvelle méthode, il faut modifier le type du tableau et le type dans les méthodes actuelles pour qu'il soit possible d'ajouter aussi bien un **Disque** qu'un **Rectangle**. Pensez au polymorphisme...
+
+Penser à modifier la méthode qui retourne le plus grand rectangle pour qu'elle retourne la plus grande **figure**.
 
 > Pensez a faire un commit !!  
 
@@ -102,19 +98,19 @@ Dans la méthode **main()** de la classe **Exec**,  sans effacer l'exercice 5 :
 > Pensez a faire un commit !!  
 
 ### Exercice 9
-Ajouter des **Triangles** (*spoiler alerte : c'est la dernière figure or bonus...*) (implique toute ce qu'il faut pour que le triangle soit une figure..). Un triangle est définit par 3 points
+Ajouter des **Triangles**. Un triangle est définit par 3 points. Ajouter tout ce qu'il faut pour que le triangle soit une figure.
 
 - Pour calculer la surface d'un triangle sans connaitre sa hauteur, on peut utiliser la formule du héron ci dessous où **s** est le demi périmètre et a, b, c la longueur de chaque coté.
 
 ![alt text](eq1.gif)
 
 
-- Pour savoir si un point **M** appartient à un triangle, vous pouvez utiliser le théorème suivant où p est le périmère :
+- Pour savoir si un point **M** appartient à un triangle, vous pouvez utiliser le théorème suivant où p est le périmètre et A, B, C sont les sommets et inf() retourne la plus petite valeur :
 
 
 ![alt text](eq2.gif)
 
-**Pensez à décomposer avec des méthodes privées (calcul des coté, du périmètre, etc...) et à réutiliser les méthodes existantes (pour calculer la longueur des cotés par exemple)**  
+**Pensez à décomposer avec des méthodes privées (calcul des cotés, du périmètre, etc...) et à réutiliser les méthodes existantes (pour calculer la longueur des cotés qui sont des distances entre 2 points par exemple)**  
 
 
 
@@ -177,7 +173,7 @@ Chaque action ne retourne rien mais doit afficher un message, **ne rien afficher
 
 
 ###   Exercice
-En utilisant le pattern *Strategy*, créer les classes et interfaces pour qu'on puisse executer le code suivant  afin qu'il nous retourne les caractéristiques et actions de l'avion :
+Créer les classes et interfaces pour qu'on puisse executer le code suivant  afin qu'il nous retourne les caractéristiques et actions de l'avion :
 
 ```java
 public static void main(String[] args) {
@@ -195,3 +191,6 @@ public static void main(String[] args) {
 > Pensez a faire un commit !!  
 > Pensez à faire un push (```git push origin feature/avion```)  
 > Si elle n'est pas déjà ouverte, ouvrez une pull request (branche **feature/avion** vers **master**) NE PAS LA FERMER/MERGER !
+
+Trouvez vous l'utilisaton simple de l'héritage et du polymorphisme adapté à ce cas de figure ?  
+Ne risque-t-on pas des bugs si on oublie de redefinir une méthode comme par exemple une maquette qui vole ?
